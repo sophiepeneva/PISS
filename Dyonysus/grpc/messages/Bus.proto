@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package bus;
+
+import "google/protobuf/timestamp.proto";
+
+message Bus {
+  int32 id = 1;
+  int32 number = 2;
+
+  optional int32 current_station_id = 3;
+  optional int32 next_station_id = 4;
+
+  google.protobuf.Timestamp time = 5;
+
+  int32 people_capacity = 6;
+  int32 current_people_count = 7;
+  flaot average_people_count = 8;
+}
