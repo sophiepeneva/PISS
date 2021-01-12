@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import Bus_pb2 as Bus__pb2
+import Dyonysus.grpc.messages.Bus_pb2 as Bus__pb2
 
 
 class DyonysusStub(object):
@@ -14,8 +14,8 @@ class DyonysusStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Service = channel.unary_unary(
-                '/bus.Dyonysus/Service',
+        self.GetServerResponse = channel.unary_unary(
+                '/bus.Dyonysus/GetServerResponse',
                 request_serializer=Bus__pb2.BusRequest.SerializeToString,
                 response_deserializer=Bus__pb2.BusResponse.FromString,
                 )
@@ -24,7 +24,7 @@ class DyonysusStub(object):
 class DyonysusServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Service(self, request, context):
+    def GetServerResponse(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -33,8 +33,8 @@ class DyonysusServicer(object):
 
 def add_DyonysusServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Service': grpc.unary_unary_rpc_method_handler(
-                    servicer.Service,
+            'GetServerResponse': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetServerResponse,
                     request_deserializer=Bus__pb2.BusRequest.FromString,
                     response_serializer=Bus__pb2.BusResponse.SerializeToString,
             ),
@@ -49,7 +49,7 @@ class Dyonysus(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Service(request,
+    def GetServerResponse(request,
             target,
             options=(),
             channel_credentials=None,
@@ -59,7 +59,7 @@ class Dyonysus(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/bus.Dyonysus/Service',
+        return grpc.experimental.unary_unary(request, target, '/bus.Dyonysus/GetServerResponse',
             Bus__pb2.BusRequest.SerializeToString,
             Bus__pb2.BusResponse.FromString,
             options, channel_credentials,
