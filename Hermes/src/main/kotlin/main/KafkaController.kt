@@ -4,17 +4,17 @@ import io.streamthoughts.kafka.clients.kafka
 import io.streamthoughts.kafka.clients.producer.Acks
 import io.streamthoughts.kafka.clients.producer.ProducerContainer
 import io.streamthoughts.kafka.clients.producer.callback.closeOnErrorProducerSendCallback
-import main.model.Container
-import main.model.ContainerSerializer
+import main.model.Bus
+import main.model.BusSerializer
 import org.apache.kafka.common.serialization.StringSerializer
 
 object KafkaController {
 
     private const val BOOTSTRAP_SERVER = "localhost:9092"
-    private const val CLIENT_ID = ""
-    private const val TOPIC = ""
+    private const val CLIENT_ID = "Hermes"
+    private const val TOPIC = "quickstart-events"
 
-    private val PRODUCER: ProducerContainer<String, Container> = kafka(BOOTSTRAP_SERVER) {
+    private val PRODUCER: ProducerContainer<String, Bus> = kafka(BOOTSTRAP_SERVER) {
         client {
             clientId(CLIENT_ID)
         }
@@ -24,7 +24,7 @@ object KafkaController {
                 acks(Acks.InSyncReplicas)
             }
             keySerializer(StringSerializer())
-            valueSerializer(ContainerSerializer())
+            valueSerializer(BusSerializer())
 
             defaultTopic(topic = TOPIC)
 
@@ -36,7 +36,7 @@ object KafkaController {
         }
     }
 
-    fun send(messages: List<Container>) {
+    fun send(messages: List<Bus>) {
         PRODUCER.use {
             PRODUCER.init()
             messages.forEach {

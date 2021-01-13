@@ -1,56 +1,38 @@
 [
   {
     "id": "some-unique-id",
-    "time": "22/02/20-12:35:35",
-    "time_by_schedule": "12:34:33",
-    "people_expected_at_next_station": 13,
-    "people_expected_to_get_off_at_next_station": 7,
-    "station": {
-      "current": "Orlov Most",
-      "next": "Pliska"
-    },
-    "bus": {
-      "people_capacity": 200,
-      "expected_max_capacity": 175,
-      "average_people_count": 165,
-      "people_count": 150,
-      "number": 72
-    }
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
   },
   {
     "id": "some-unique-id",
-    "time": "22/02/20-12:35:35",
-    "time_by_schedule": "12:34:33",
-    "people_expected_at_next_station": 13,
-    "people_expected_to_get_off_at_next_station": 7,
-    "station": {
-      "current": "Orlov Most",
-      "next": "Pliska"
-    },
-    "bus": {
-      "people_capacity": 200,
-      "expected_max_capacity": 175,
-      "average_people_count": 165,
-      "people_count": 150,
-      "number": 72
-    }
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
   },
   {
     "id": "some-unique-id",
-    "time": "22/02/20-12:35:35",
-    "time_by_schedule": "12:34:33",
-    "people_expected_at_next_station": 13,
-    "people_expected_to_get_off_at_next_station": 7,
-    "station": {
-      "current": "Orlov Most",
-      "next": "Pliska"
-    },
-    "bus": {
-      "people_capacity": 200,
-      "expected_max_capacity": 175,
-      "average_people_count": 165,
-      "people_count": 150,
-      "number": 72
-    }
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
+  },
+  {
+    "id": "some-unique-id",
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
   }
 ]
