@@ -1,6 +1,11 @@
 plugins {
+    application
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.4.20"
+}
+
+application {
+    mainClassName = "main.MainKt"
 }
 
 repositories {
