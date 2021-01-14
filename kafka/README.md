@@ -27,3 +27,7 @@ http://localhost:8080 Grafana dashboard
 
 ## Run client for apollo
 ./run_apollo_client.sh
+
+## Build proto message files
+from Dyonysus/grpc/messages exec
+python -m grpc_tools.protoc --proto_path=. ./Bus.proto --python_out=. --grpc_python_out=.
