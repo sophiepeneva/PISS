@@ -3,3 +3,4 @@
 build/
 .gradle/
 kafka/source/logs/
+*__pycache__*
