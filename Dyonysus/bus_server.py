@@ -3,6 +3,7 @@ from concurrent import futures
 import time
 import Dyonysus.grpc.messages.Bus_pb2 as Bus_pb2
 import Dyonysus.grpc.messages.Bus_pb2_grpc as Bus_pb2_grpc
+import random
 
 class BusService(Bus_pb2_grpc.DyonysusServicer):
 
@@ -18,9 +19,9 @@ class BusService(Bus_pb2_grpc.DyonysusServicer):
         print(number)
         bus = {
             'id' : id,
-            'number' : number,
-            'people_capacity' : 100,
-            'average_people_count' : 72
+            'number' : random.randint(0, 300),
+            'people_capacity' : random.randint(0, 300),
+            'average_people_count' : random.randint(0, 300)
         }
         return Bus_pb2.BusResponse(**bus)
 
