@@ -2,7 +2,7 @@ import grpc
 import Dyonysus.grpc.messages.Bus_pb2 as Bus_pb2
 import Dyonysus.grpc.messages.Bus_pb2_grpc as Bus_pb2_grpc
 from datetime import datetime
-from influxdb import client
+from influxdb import client as influxdb
 
 
 class BusClient(object):
@@ -37,19 +37,21 @@ if __name__ == '__main__':
     }
     result = client.get_url(bus=bus)
     print(result.people_capacity)
-    
-    influx = client.InfluxDBClient("localhost", 8086, "root", "root", "PISS_DB")
+
+    influx = influxdb.InfluxDBClient("localhost", 8086, "root", "root", "PISS_DB")
     
     json_body = [
         {
-            "measurement": "cpu_load_short",
+            "measurement": "bus_data",
             "tags": {
-                "host": "server01",
-                "region": "us-west"
+                "buses_info_source": "apollo_client",
             },
-            "time": "2009-11-10T23:00:00Z",
+            "time": datetime.now(),
             "fields": {
-                "value": 0.64
+                "number": result.number,
+                "id": result.id,
+                "people_capacity": result.people_capacity,
+                "average_people_count": result.average_people_count
             }
         }
     ]

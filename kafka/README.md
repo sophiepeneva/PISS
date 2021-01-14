@@ -24,3 +24,6 @@ http://localhost:8083 - InfluxDB PISS_DB is already created
 docker run -d --name grafana -p 8080:80 -e INFLUXDB_HOST=localhost -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=mydata -e INFLUXDB_USER=root -e INFLUXDB_PASS=root tutum/grafana
 
 http://localhost:8080 Grafana dashboard
+
+## Run client for apollo
+./run_apollo_client.sh
