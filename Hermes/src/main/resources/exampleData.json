@@ -1,0 +1,38 @@
+[
+  {
+    "id": "some-unique-id",
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
+  },
+  {
+    "id": "some-unique-id",
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
+  },
+  {
+    "id": "some-unique-id",
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
+  },
+  {
+    "id": "some-unique-id",
+    "timestamp": "12387812368",
+    "stationId": "some-unique-id",
+    "peopleCountCurrent": 150,
+    "peopleGettingOffTheBus": 11,
+    "peopleGettingOnTheBus": 13,
+    "number": 73
+  }
+]
