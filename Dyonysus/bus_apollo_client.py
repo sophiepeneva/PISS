@@ -1,6 +1,8 @@
 import grpc
 import Dyonysus.grpc.messages.Bus_pb2 as Bus_pb2
 import Dyonysus.grpc.messages.Bus_pb2_grpc as Bus_pb2_grpc
+from datetime import datetime
+from influxdb import client
 
 
 class BusClient(object):
@@ -35,3 +37,21 @@ if __name__ == '__main__':
     }
     result = client.get_url(bus=bus)
     print(result.people_capacity)
+    
+    influx = client.InfluxDBClient("localhost", 8086, "root", "root", "PISS_DB")
+    
+    json_body = [
+        {
+            "measurement": "cpu_load_short",
+            "tags": {
+                "host": "server01",
+                "region": "us-west"
+            },
+            "time": "2009-11-10T23:00:00Z",
+            "fields": {
+                "value": 0.64
+            }
+        }
+    ]
+
+    influx.write_points(json_body)

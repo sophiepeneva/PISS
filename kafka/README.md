@@ -15,3 +15,12 @@ The whole kafka is in the folder source
 ## Create topic and get topic info
 * ./create_kafka_topic.sh
 * ./get_topic_info.sh
+
+## Setup grafana and influxdb
+
+docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 tutum/influxdb 
+http://localhost:8083 - InfluxDB PISS_DB is already created
+
+docker run -d --name grafana -p 8080:80 -e INFLUXDB_HOST=localhost -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=mydata -e INFLUXDB_USER=root -e INFLUXDB_PASS=root tutum/grafana
+
+http://localhost:8080 Grafana dashboard
