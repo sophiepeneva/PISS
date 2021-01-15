@@ -28,7 +28,7 @@ docker run -d -p 3000:3000 \
 ./run_apollo_client.sh
 
 ## Build proto message files
-cd Dyonysus/grpc/messages
+cd PISS/Dyonysus/grpc/messages
 python -m grpc_tools.protoc --proto_path=. ./Bus.proto --python_out=. --grpc_python_out=.
 
 ## Run whole pipeline

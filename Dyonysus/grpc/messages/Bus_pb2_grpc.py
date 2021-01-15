@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import Bus_pb2 as Bus__pb2
+import Dyonysus.grpc.messages.Bus_pb2 as Bus__pb2
 
 
 class ApolloStub(object):
