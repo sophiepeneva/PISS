@@ -18,14 +18,14 @@ class BusClient(object):
             '{}:{}'.format(self.host, self.server_port))
 
         # bind the client and the server
-        self.stub = Bus_pb2_grpc.DyonysusStub(self.channel)
+        self.stub = Bus_pb2_grpc.ApolloStub(self.channel)
 
     def get_url(self, bus):
         """
-        Client function to call the rpc for GetServerResponse
+        Client function to call the rpc for GetBusDetails
         """
-        request = Bus_pb2.BusRequest(id=bus['number'], number=bus['number'])
-        return self.stub.GetServerResponse(request)
+        request = Bus_pb2.BusDetailsRequest(id=bus['number'], number=bus['number'])
+        return self.stub.GetBusDetails(request)
 
 client = BusClient()
 

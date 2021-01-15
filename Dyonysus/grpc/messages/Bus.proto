@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package bus;
 
-message BusRequest {
+message BusDetailsRequest {
   int32 id = 1;
   int32 number = 2;
 }
 
-message BusResponse {
+message BusDetailsResponse {
     int32 id = 1;
     int32 number = 2;
   
@@ -15,30 +15,6 @@ message BusResponse {
     float average_people_count = 4;
 }
 
-service Dyonysus{
-   rpc GetServerResponse(BusRequest) returns (BusResponse) {}
+service Apollo{
+   rpc GetBusDetails(BusDetailsRequest) returns (BusDetailsResponse) {}
 }
-
-
-
-
-// syntax = "proto3";
-
-// package gen;
-
-// message BusDetailsRequest {
-//   int32 id = 1;
-//   int32 number = 2;
-// }
-
-// message BusDetailsResponse {
-//     int32 id = 1;
-//     int32 number = 2;
-
-//     int32 people_capacity = 3;
-//     float average_people_count = 4;
-// }
-
-// service Apollo{
-//    rpc GetBusDetails(BusDetailsRequest) returns (BusDetailsResponse) {}
-// }

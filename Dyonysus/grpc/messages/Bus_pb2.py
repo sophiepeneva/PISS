@@ -19,29 +19,29 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tBus.proto\x12\x03\x62us\"(\n\nBusRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06number\x18\x02 \x01(\x05\"`\n\x0b\x42usResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06number\x18\x02 \x01(\x05\x12\x17\n\x0fpeople_capacity\x18\x03 \x01(\x05\x12\x1c\n\x14\x61verage_people_count\x18\x04 \x01(\x02\x32\x44\n\x08\x44yonysus\x12\x38\n\x11GetServerResponse\x12\x0f.bus.BusRequest\x1a\x10.bus.BusResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\tBus.proto\x12\x03\x62us\"/\n\x11\x42usDetailsRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06number\x18\x02 \x01(\x05\"g\n\x12\x42usDetailsResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0e\n\x06number\x18\x02 \x01(\x05\x12\x17\n\x0fpeople_capacity\x18\x03 \x01(\x05\x12\x1c\n\x14\x61verage_people_count\x18\x04 \x01(\x02\x32L\n\x06\x41pollo\x12\x42\n\rGetBusDetails\x12\x16.bus.BusDetailsRequest\x1a\x17.bus.BusDetailsResponse\"\x00\x62\x06proto3'
 )
 
 
 
 
-_BUSREQUEST = _descriptor.Descriptor(
-  name='BusRequest',
-  full_name='bus.BusRequest',
+_BUSDETAILSREQUEST = _descriptor.Descriptor(
+  name='BusDetailsRequest',
+  full_name='bus.BusDetailsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='bus.BusRequest.id', index=0,
+      name='id', full_name='bus.BusDetailsRequest.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='number', full_name='bus.BusRequest.number', index=1,
+      name='number', full_name='bus.BusDetailsRequest.number', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -60,41 +60,41 @@ _BUSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=18,
-  serialized_end=58,
+  serialized_end=65,
 )
 
 
-_BUSRESPONSE = _descriptor.Descriptor(
-  name='BusResponse',
-  full_name='bus.BusResponse',
+_BUSDETAILSRESPONSE = _descriptor.Descriptor(
+  name='BusDetailsResponse',
+  full_name='bus.BusDetailsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='bus.BusResponse.id', index=0,
+      name='id', full_name='bus.BusDetailsResponse.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='number', full_name='bus.BusResponse.number', index=1,
+      name='number', full_name='bus.BusDetailsResponse.number', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='people_capacity', full_name='bus.BusResponse.people_capacity', index=2,
+      name='people_capacity', full_name='bus.BusDetailsResponse.people_capacity', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='average_people_count', full_name='bus.BusResponse.average_people_count', index=3,
+      name='average_people_count', full_name='bus.BusDetailsResponse.average_people_count', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -112,53 +112,53 @@ _BUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=60,
-  serialized_end=156,
+  serialized_start=67,
+  serialized_end=170,
 )
 
-DESCRIPTOR.message_types_by_name['BusRequest'] = _BUSREQUEST
-DESCRIPTOR.message_types_by_name['BusResponse'] = _BUSRESPONSE
+DESCRIPTOR.message_types_by_name['BusDetailsRequest'] = _BUSDETAILSREQUEST
+DESCRIPTOR.message_types_by_name['BusDetailsResponse'] = _BUSDETAILSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-BusRequest = _reflection.GeneratedProtocolMessageType('BusRequest', (_message.Message,), {
-  'DESCRIPTOR' : _BUSREQUEST,
+BusDetailsRequest = _reflection.GeneratedProtocolMessageType('BusDetailsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BUSDETAILSREQUEST,
   '__module__' : 'Bus_pb2'
-  # @@protoc_insertion_point(class_scope:bus.BusRequest)
+  # @@protoc_insertion_point(class_scope:bus.BusDetailsRequest)
   })
-_sym_db.RegisterMessage(BusRequest)
+_sym_db.RegisterMessage(BusDetailsRequest)
 
-BusResponse = _reflection.GeneratedProtocolMessageType('BusResponse', (_message.Message,), {
-  'DESCRIPTOR' : _BUSRESPONSE,
+BusDetailsResponse = _reflection.GeneratedProtocolMessageType('BusDetailsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _BUSDETAILSRESPONSE,
   '__module__' : 'Bus_pb2'
-  # @@protoc_insertion_point(class_scope:bus.BusResponse)
+  # @@protoc_insertion_point(class_scope:bus.BusDetailsResponse)
   })
-_sym_db.RegisterMessage(BusResponse)
+_sym_db.RegisterMessage(BusDetailsResponse)
 
 
 
-_DYONYSUS = _descriptor.ServiceDescriptor(
-  name='Dyonysus',
-  full_name='bus.Dyonysus',
+_APOLLO = _descriptor.ServiceDescriptor(
+  name='Apollo',
+  full_name='bus.Apollo',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=158,
-  serialized_end=226,
+  serialized_start=172,
+  serialized_end=248,
   methods=[
   _descriptor.MethodDescriptor(
-    name='GetServerResponse',
-    full_name='bus.Dyonysus.GetServerResponse',
+    name='GetBusDetails',
+    full_name='bus.Apollo.GetBusDetails',
     index=0,
     containing_service=None,
-    input_type=_BUSREQUEST,
-    output_type=_BUSRESPONSE,
+    input_type=_BUSDETAILSREQUEST,
+    output_type=_BUSDETAILSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_DYONYSUS)
+_sym_db.RegisterServiceDescriptor(_APOLLO)
 
-DESCRIPTOR.services_by_name['Dyonysus'] = _DYONYSUS
+DESCRIPTOR.services_by_name['Apollo'] = _APOLLO
 
 # @@protoc_insertion_point(module_scope)
