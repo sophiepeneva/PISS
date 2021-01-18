@@ -11,6 +11,8 @@
 
 ## Setup grafana and influxdb
 
+docker rm influxdb grafana
+
 docker run -d -p 8083:8083 -p 8086:8086 \
   -e PRE_CREATE_DB="wadus" \
   --expose 8090 --expose 8099 \

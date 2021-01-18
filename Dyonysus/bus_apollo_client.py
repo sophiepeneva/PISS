@@ -1,6 +1,6 @@
 import grpc
-import Dyonysus.grpc.messages.Bus_pb2 as Bus_pb2
-import Dyonysus.grpc.messages.Bus_pb2_grpc as Bus_pb2_grpc
+import Dyonysus.grpc.messages.apollo_pb2 as Bus_pb2
+import Dyonysus.grpc.messages.apollo_pb2_grpc as Bus_pb2_grpc
 from datetime import datetime
 from influxdb import client as influxdb
 
@@ -24,17 +24,16 @@ class BusClient(object):
         """
         Client function to call the rpc for GetBusDetails
         """
-        request = Bus_pb2.BusDetailsRequest(id=bus['number'], number=bus['number'])
+        request = Bus_pb2.BusDetailsRequest(id=int(bus['id']))
         return self.stub.GetBusDetails(request)
 
 client = BusClient()
 
 influx = influxdb.InfluxDBClient("localhost", 8086, "root", "root", "wadus")
 
-def get_bus_info_from_apollo(id, number):
+def get_bus_info_from_apollo(id):
     bus = {
-        'id' : id,
-        'number' : number
+        'id' : id
     }
     result = client.get_url(bus=bus)
     return result

@@ -10,7 +10,7 @@ influx = influxdb.InfluxDBClient("localhost", 8086, "root", "root", "wadus")
 
 def send_bus_info_to_influx(message):
     parsed_message = json.loads(message)
-    additional_info = get_bus_info_from_apollo(parsed_message['id'], parsed_message['number'])
+    additional_info = get_bus_info_from_apollo(parsed_message['id'])
     # time = datetime.fromtimestamp(float(str(parsed_message['timestamp']))).strftime('%Y-%m-%dT%H:%M:%SZ')
     #time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     #time = datetime.utcfromtimestamp(float(str(parsed_message['timestamp']))).strftime('%Y-%m-%dT%H:%M:%SZ')

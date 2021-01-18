@@ -1,8 +1,8 @@
 import grpc
 from concurrent import futures
 import time
-import Dyonysus.grpc.messages.Bus_pb2 as Bus_pb2
-import Dyonysus.grpc.messages.Bus_pb2_grpc as Bus_pb2_grpc
+import Dyonysus.grpc.messages.apollo_pb2 as Bus_pb2
+import Dyonysus.grpc.messages.apollo_pb2_grpc as Bus_pb2_grpc
 import random
 
 class BusService(Bus_pb2_grpc.ApolloServicer):
