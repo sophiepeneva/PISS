@@ -11,7 +11,7 @@ class BusClient(object):
 
     def __init__(self):
         self.host = 'localhost'
-        self.server_port = 50051
+        self.server_port = 9000
 
         # instantiate a channel
         self.channel = grpc.insecure_channel(
