@@ -3,23 +3,7 @@
 
 * A - Hermes - бога на съобщенията(защото праща съобщения)
 * Б - Dyonysus - бог на събирането на реколтата(защото събира инфото от съобщенията и прави нещо с тях)
-* В - Apolo - бога на знанията(защото е базата данни)
-
-## Setup grafana and influxdb
-* cd `some random terminal`
-
-* docker rm influxdb grafana
-
-* docker run -d -p 8083:8083 -p 8086:8086 \
-  -e PRE_CREATE_DB="wadus" \
-  --expose 8090 --expose 8099 \
-  --name influxdb \
-  tutum/influxdb
-
-* docker run -d -p 3000:3000 \
-  --link influxdb:influxdb \
-  --name grafana \
-  grafana/grafana
+* В - Apollo - бога на знанията(защото е базата данни)
 
 ## Setup kafka
 * cd PISS/kafka
@@ -44,8 +28,16 @@ You may need to setup the proto messages, but you shouldn't need to:
 * cd PISS/Dyonysus/grpc/messages
 * python -m grpc_tools.protoc --proto_path=. ./apollo.proto --python_out=. --grpc_python_out=.
 
-#### Setup proto messages
-
 ## Setup Hermes
 * cd Hermes
 * ./run.sh
+
+## Setup vizualizations in grafana
+* open influxdb -> localhost:8083
+* check if there are any entries -> select * from "bus_data"
+
+* open grafana -> localhost:3000 -> admin admin
+* settings -> data sources -> new data source -> influxdb
+* see set_up_influx_in_grafana.png in PISS for more info
+
+TODO: explain with pics how to create the needed visualizations
