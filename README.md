@@ -5,19 +5,12 @@
 * Б - Dyonysus - бог на събирането на реколтата(защото събира инфото от съобщенията и прави нещо с тях)
 * В - Apollo - бога на знанията(защото е базата данни)
 
-## Setup kafka
-* cd PISS/kafka
-* ./utils/run_zookeeper.sh
-* ./utils/run_kafka.sh
-* ./utils/create_kafka_topic.sh
-* ./utils/get_topic_info.sh
-
 ## Setup Apollo
 * cd PISS/Apollo/setup
 * docker-compose up
 * ./install_go_dependencies.sh
 * cd Apollo
-* go run .
+* ./run.sh
 
 ## Setup Dyonysus
 * cd Dyonysus
