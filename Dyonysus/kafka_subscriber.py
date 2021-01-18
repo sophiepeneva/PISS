@@ -11,9 +11,7 @@ influx = influxdb.InfluxDBClient("localhost", 8086, "root", "root", "wadus")
 def send_bus_info_to_influx(message):
     parsed_message = json.loads(message)
     additional_info = get_bus_info_from_apollo(parsed_message['id'])
-    # time = datetime.fromtimestamp(float(str(parsed_message['timestamp']))).strftime('%Y-%m-%dT%H:%M:%SZ')
-    #time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-    #time = datetime.utcfromtimestamp(float(str(parsed_message['timestamp']))).strftime('%Y-%m-%dT%H:%M:%SZ')
+
     json_body = [
         {
             "measurement": "bus_data",
@@ -24,7 +22,9 @@ def send_bus_info_to_influx(message):
             "fields": {
                 "number": additional_info.number,
                 "id": additional_info.id,
-                "people_capacity": additional_info.people_capacity,
+                "standing_people_capacity": additional_info.standing_people_capacity,
+                "sitting_people_capacity": additional_info.sitting_people_capacity,
+                "disabled_people_capacity": additional_info.disabled_people_capacity,
                 "average_people_count": additional_info.average_people_count,
                 "station_id":parsed_message['stationId'],
                 "current_people_count":parsed_message['peopleCountCurrent'],
@@ -35,7 +35,7 @@ def send_bus_info_to_influx(message):
         }
     ]
     influx.write_points(json_body)
-    #print(json_body)
+    print('Sending bus info to influx: ', dumps(json_body))
 
 def main():
     consumer = KafkaConsumer(
