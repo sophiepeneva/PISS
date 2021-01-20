@@ -15,9 +15,10 @@ def send_bus_info_to_influx(message):
     json_body = [
         {
             "measurement": "bus_data",
+            "time" : parsed_message['timestamp'],
             "tags": {
-                "host": "server01",
-                "region": "us-west"
+                "number": str(additional_info.number),
+                "current_station_id": str(parsed_message['stationId'])
             },
             "fields": {
                 "number": additional_info.number,
@@ -26,7 +27,7 @@ def send_bus_info_to_influx(message):
                 "sitting_people_capacity": additional_info.sitting_people_capacity,
                 "disabled_people_capacity": additional_info.disabled_people_capacity,
                 "average_people_count": additional_info.average_people_count,
-                "station_id":parsed_message['stationId'],
+                "station_id":int(parsed_message['stationId']),
                 "current_people_count":parsed_message['peopleCountCurrent'],
                 "people_out":parsed_message['peopleGettingOffTheBus'],
                 "people_in":parsed_message['peopleGettingOnTheBus'],
@@ -34,7 +35,7 @@ def send_bus_info_to_influx(message):
             }
         }
     ]
-    influx.write_points(json_body)
+    influx.write_points(json_body, time_precision='ms')
     print('Sending bus info to influx: ', dumps(json_body))
 
 def main():
@@ -53,3 +54,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

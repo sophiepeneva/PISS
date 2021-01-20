@@ -33,4 +33,13 @@ You may need to setup the proto messages, but you shouldn't need to:
 * settings -> data sources -> new data source -> influxdb
 * see set_up_influx_in_grafana.png in PISS for more info
 
-TODO: explain with pics how to create the needed visualizations
+* for adding visualizations and the necessary queries look at images:
+ * in_out_line_chart.png
+ * people_int_out_stat.png
+ * people_on_station.png
+ * people_per_bus_heatmap.png
+ * people_per_bus_line_chart.png
+* for adding grafana variables to filter charts look at images:
+ * variables_settings.png
+ * bus_num_var_settings.png
+* the result should look like grafana_dashboard.png
